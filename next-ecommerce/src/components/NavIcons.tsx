@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import CartModel from "./cartModel";
 
 export const NavIcons = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -30,13 +31,21 @@ export const NavIcons = () => {
         height={22}
         className="cursor-pointer"
       />
-      <Image
-        src="/cart.png"
-        alt=""
-        width={22}
-        height={22}
-        className="cursor-pointer"
-      />
+      <div className="relative cursor-pointer">
+        <Image
+          src="/cart.png"
+          alt=""
+          width={22}
+          height={22}
+          className="cursor-pointer"
+          onClick={() => setIsCartOpen((prev) => !prev)}
+        />
+        <div className=" absolute -top-4 -right-4 w-6 h-6 bg-lama rounded -full tesxt-white text -sm flex item-center justify-center">
+          {" "}
+          2{" "}
+        </div>
+      </div>
+      {isCartOpen && <CartModel />}
     </div>
   );
 };
