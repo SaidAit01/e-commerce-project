@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@wix/sdk": "^1.15.26",
+    "@wix/stores": "^1.0.501",
+    "js_cookie": "^1.0.0"
+  }
+}
